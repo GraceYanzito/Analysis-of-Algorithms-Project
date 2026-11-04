@@ -1,0 +1,13 @@
+Restated Question:
+What is the longest loop at Silver Falls I can complete in T hours?
+
+What Algorithm:
+Held-Karp - implemented by ....
+
+How is it Correct and Asymptotic Analysis (Big-O):
+
+Plot:
+
+Updated Schedule:
+
+Member Controbutions:
