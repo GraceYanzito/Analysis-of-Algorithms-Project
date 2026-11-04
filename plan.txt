@@ -1,0 +1,11 @@
+what to do about distances
+
+Matrix of distances
+
+
+Parameters:
+ - Need to complete the FULL trail segment
+ - Every trail needs to be a double linked list (A -> B) and (B -> A)
+ - Time restraint >= Total Trail Time
+ - Need to end where you start
+ - Need to start at a parking lot
