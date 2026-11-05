@@ -1,17 +1,50 @@
 travel_data = {
-    "Salem": {
-        "gps": (44.94, -123.03),
-        "type": "Hub",
-        "connections": {                  # Group routes here
-            "Office": {"distance": 7, "type": "highway"},
-            "Warehouse": {"distance": 4, "type": "local_road"}
-        }
-    },
-    "Office": {
-        "gps": (44.96, -123.01),
-        "type": "Branch",
-        "connections": {
-            "Salem": {"distance": 7, "type": "highway"}
+        "Salem": {
+            "gps": (44.94, -123.03), "type": "HQ",
+            "is_allowed_start": True,   # <-- SIGNIFICIED DIRECTLY IN DICTIONARY
+            "connections": {
+                "Office": {"distance": 7, "road": "highway"},
+                "Warehouse": {"distance": 4, "road": "local"}
+            }
+        },
+        "Office": {
+            "gps": (44.96, -123.01), "type": "Branch",
+            "is_allowed_start": False,
+            "connections": {
+                "Salem": {"distance": 7, "road": "highway"}
+            }
+        },
+        "Warehouse": {
+            "gps": (44.91, -123.07), "type": "Fulfillment",
+            "is_allowed_start": True,   # <-- SIGNIFICIED DIRECTLY IN DICTIONARY
+            "connections": {
+                "Salem": {"distance": 4, "road": "local"},
+                "Dock": {"distance": 1, "road": "private"},
+                "Hub_North": {"distance": 3, "road": "highway"},
+                "Station_Z": {"distance": 5, "road": "main"}
+            }
+        },
+        "Dock": {
+            "gps": (44.90, -123.08), "type": "Shipping",
+            "is_allowed_start": False,
+            "connections": {
+                "Warehouse": {"distance": 1, "road": "private"}
+            }
+        },
+        "Hub_North": {
+            "gps": (45.12, -122.99), "type": "Transit",
+            "is_allowed_start": False,
+            "connections": {
+                "Warehouse": {"distance": 3, "road": "highway"},
+                "Station_Z": {"distance": 2, "road": "express"}
+            }
+        },
+        "Station_Z": {
+            "gps": (45.15, -123.02), "type": "Transit",
+            "is_allowed_start": False,
+            "connections": {
+                "Warehouse": {"distance": 5, "road": "main"},
+                "Hub_North": {"distance": 2, "road": "express"}
+            }
         }
     }
-}
