@@ -1,26 +1,17 @@
-travel_map = {
+travel_data = {
     "Salem": {
-        "Office": 7, 
-        "Warehouse": 4
+        "gps": (44.94, -123.03),
+        "type": "Hub",
+        "connections": {                  # Group routes here
+            "Office": {"distance": 7, "type": "highway"},
+            "Warehouse": {"distance": 4, "type": "local_road"}
+        }
     },
     "Office": {
-        "Salem": 7
-    },
-    "Warehouse": {
-        "Salem": 4, 
-        "Dock": 1, 
-        "Hub_North": 3, 
-        "Station_Z": 5
-    },
-    "Dock": {
-        "Warehouse": 1
-    },
-    "Hub_North": {
-        "Warehouse": 3, 
-        "Station_Z": 2
-    },
-    "Station_Z": {
-        "Warehouse": 5, 
-        "Hub_North": 2
+        "gps": (44.96, -123.01),
+        "type": "Branch",
+        "connections": {
+            "Salem": {"distance": 7, "type": "highway"}
+        }
     }
 }
