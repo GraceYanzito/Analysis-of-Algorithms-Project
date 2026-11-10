@@ -1,10 +1,16 @@
 Restated Question:
 What is the longest loop at Silver Falls I can complete in T hours?
 
-What Algorithm:
+What Algorithm We Origionally Used:
 Held-Karp - implemented by ....
 
-How is it Correct and Asymptotic Analysis (Big-O):
+New Algorithm Used:
+Depth First Search
+
+Asymptotic Analysis (Big-O):
+Big-O - O(V + E)
+
+Correctness Report:
 
 Plot:
 
