@@ -17,9 +17,9 @@
  <h2 align="center">Running Tests</h2>
 
  <ul>
-   <li>Place Holder</li>
-   <li>Place Holder</li>
-   <li>Place Holder</li>
+   <li>Update preferred hike length via "budget" variable in the main function call in "depthFirst.py"</li>
+   <li>Update preferred starting point via "origin" variable in the main function call in "depthFirst.py"</li>
+   <li>Run "depthFirst.py"</li>
    <li>Place Holder</li>
  </ul>
 
