@@ -1,7 +1,9 @@
 import heapq
 from collections import Counter
 from itertools import count
-from testDictionary import travel_data
+from testDictionary import trail_data
+import time
+start_total = time.perf_counter()
 
 
 # ----------------------------------------------------------------------
@@ -170,7 +172,7 @@ def show(title, results, id_to_name, limit=10):
     for key, total, _, path, nn, fresh, rep in results[:limit]:
         names = " -> ".join(id_to_name[n] for n in path)
         print(
-            f"[{total:>2} mi | new nodes {nn} | fresh {fresh:>2} | repeat {rep:>2}] {names}"
+            f"[{total:>5.1f} mi | new nodes {nn} | fresh {fresh:>5.1f} | repeat {rep:>5.1f}] {names}"
         )
 
 
@@ -178,8 +180,8 @@ def show(title, results, id_to_name, limit=10):
 # Single Execution Entry Point
 # ----------------------------------------------------------------------
 if __name__ == "__main__":
-    n, matrix, name_to_id, id_to_name = build_matrix_from_dict(travel_data)
-    budget, origin = 18, "Salem"
+    n, matrix, name_to_id, id_to_name = build_matrix_from_dict(trail_data)
+    budget, origin = 25, "Trail_5"
 
     if origin not in name_to_id:
         raise ValueError(f"Origin '{origin}' not found in travel_data.")
@@ -209,3 +211,6 @@ if __name__ == "__main__":
     # 3. Point-to-Point Trails
     p2p = find_ranked_trails(n, matrix, budget, start, return_to_start=False)
     show("Point-to-point trails, best first", p2p, id_to_name, limit=8)
+
+    end_total = time.perf_counter()
+    print(f"\nTotal process time: {end_total - start_total:.4f} seconds")
